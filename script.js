@@ -5,18 +5,30 @@ var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowerCasedCharacters = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ];
 var upperCasedCharacters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ];
 const minimumCharacterLength = 8;
-const maximumChatacterLength = 128;
+const maximumCharacterLength = 128;
+passwordlength = 8;
+
+
+
+generateBtn.addEventListener("click", writePassword);
+
 
 //ask the user how many characters, type of characters, upper, lower case
-function askInput(){
-  var characterlength =window.prompt ("How many characters would you like your password to contain"); //add if null, then exit and if greater then and less then character length
- //user selects cancel
-  if(!characterlength){
+function askInput()
+
+passwordlength=window.prompt("How many characters would you like your password to contain"); 
+
+ //if user selects cancel the dialog box closes
+  if(!passwordlength){
     return;
   }
-  else if (characterlength<minimumCharacterLength) window.prompt ("Password must be a minmum of 8 Characters")
+
+  else if (passwordlength<minimumCharacterLength|| passwordlength>maximumCharacterLength) window.alert ("Password must be a minimum of 8 or a Maximum of 128 Characters, Please try again");
+  return false;
+
 
   var incSpecialCharacters = window.confirm ("Click OK if you want to include special characters?");
+
   var incNumerical = window.confirm ("Click OK if you want to include Numbers?");
   var incLowerCase = window.confirm ("Click OK if you want to include Lower Caase?");
   var incUpperCase = window.confirm ("Click OK if you want to include Upper Case?");
@@ -28,11 +40,15 @@ function askInput(){
   console.log(incLowerCase);
   console.log(incUpperCase);
 
-}
   
 //Generate Password
 function generatePassword(){
+var password = "";
+for (var i=0; i < password; i++){
 
+
+var randomPassword =Math.floor(Math.random() *password.length) 
+}
 }
 
 // Write password to the #password input
@@ -42,19 +58,4 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// How many characters would you like your password to contain( input windows box) ( if number is less than 8 or greater then 128, tell pw must be 8 characters)
-//
-//length of password >= 8 and <=128
-
-//click ok if you want to inlcude special charaters - t o f - if ok then
-//click ok if you want to use numerical
-//click ok if you want to use lower case
-//click ok if you want to use upper case
-//
-//type of character
-
-//
+}
