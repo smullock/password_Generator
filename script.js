@@ -9,10 +9,27 @@ const maximumCharacterLength = 128;
 passwordlength = 8;
 
 
-
+// When user clicks on button this starts the function
 generateBtn.addEventListener("click", writePassword);
 
+// Write password to the #password input
+function writePassword() {
 
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+  
+//Generate Password
+function generatePassword(){
+var password = "";
+for (var i=0; i < passwordlength; i++){
+var randomPassword =Math.floor(Math.random() * pwdChoice.length) 
+issuedPassword = 
+}
+}
 //ask the user how many characters, type of characters, upper, lower case
 function askInput()
 
@@ -22,7 +39,7 @@ passwordlength=window.prompt("How many characters would you like your password t
   if(!passwordlength){
     return;
   }
-
+// if the password length is < 8 or greater than 128 a prompt will appear asking them to try again
   else if (passwordlength<minimumCharacterLength|| passwordlength>maximumCharacterLength) window.alert ("Password must be a minimum of 8 or a Maximum of 128 Characters, Please try again");
   return false;
 
@@ -33,29 +50,7 @@ passwordlength=window.prompt("How many characters would you like your password t
   var incLowerCase = window.confirm ("Click OK if you want to include Lower Caase?");
   var incUpperCase = window.confirm ("Click OK if you want to include Upper Case?");
 
+  pwdChoice = in
 
-  console.log(characterlength);
-  console.log(incSpecialCharacters);
-  console.log(incNumerical);
-  console.log(incLowerCase);
-  console.log(incUpperCase);
+return true;
 
-  
-//Generate Password
-function generatePassword(){
-var password = "";
-for (var i=0; i < password; i++){
-
-
-var randomPassword =Math.floor(Math.random() *password.length) 
-}
-}
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-}
